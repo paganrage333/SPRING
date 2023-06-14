@@ -137,12 +137,13 @@ input {
     padding: 10px;
     font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
     color: white;
-    font-size: 24px;
+    font-size: 22px;
     text-shadow:
    -1px -1px 0 #000,  
     1px -1px 0 #000,
     -1px 1px 0 #000,
      1px 1px 0 #000;
+     text-transform: uppercase;
 }
 
 .meme-template p.top {
