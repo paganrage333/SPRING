@@ -53,7 +53,20 @@ h1 {
   color: hotpink;
 }
 
+#btn {
+  display: grid;
+  justify-content: space-evenly;
+  background-color: deeppink;
+  font-size: 20px;
+  font-family: Oswald;
+  /* height: 15vh; */
+}
 
+#resetButton {
+  /* border: none; */
+  background-color: aqua;
+  font-family: Oswald;
+}
 
 #game {
   display: grid;
@@ -61,7 +74,7 @@ h1 {
   padding: 50px;
   column-gap: 20px;
   justify-content: center;
-  height: 100vh;
+  height: 70vh;
 }
 
 section {

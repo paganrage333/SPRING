@@ -13,6 +13,29 @@ const COLORS = [
   "purple"
 ];
 
+const resetButton = document.getElementById("resetButton");
+
+// Reset the game when the reset button is clicked
+resetButton.addEventListener("click", resetGame);
+
+function resetGame() {
+  numCardsClicked = 0;
+  firstCard = null;
+  secondCard = null;
+  numPairsFound = 0;
+  score = 0; // Reset the score
+  scoreDisplay.textContent = "Score: " + score; // Update the score display
+  
+  // Remove all cards from the game container
+  gameContainer.innerHTML = "";
+
+  // Shuffle the colors array
+  let shuffledColors = shuffle(COLORS);
+
+  // Recreate the cards
+  createDivsForColors(shuffledColors);
+}
+
 // here is a helper function to shuffle an array
 // it returns the same array with values shuffled
 // it is based on an algorithm called Fisher Yates if you want ot research more
@@ -62,9 +85,17 @@ let firstCard = null;
 let secondCard = null;
 let numPairsFound = 0;
 
+const scoreDisplay = document.getElementById("scoreDisplay");
+let score = 0;
+let lowestScore = localStorage.getItem("lowestScore") || Infinity;
+
 // TODO: Implement this function!
 
 function handleCardClick(event) {
+  //Increment score
+  score++;
+  scoreDisplay.textContent = "Score: " + score;
+
   const clickedCard = event.target;
 
   if (numCardsClicked === 0) {
@@ -87,6 +118,14 @@ function handleCardClick(event) {
       // Match! 
       numPairsFound++;
       if (numPairsFound === COLORS.length / 2) {
+        //check if current score is lower than lowest score
+        if (score < lowestScore) {
+          //update score
+          lowestScore = score;
+          //store score in local storage
+          localStorage.setItem("lowestScore", lowestScore);
+        }
+
         //All pairs found!
         displayCongratulations();
       }
