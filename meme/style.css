@@ -1,15 +1,4 @@
-/* #meme-display > div {
-    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
-    color: white;
-    text-shadow: 2px 2px;
-    position: relative;
-} */
 @import url('https://fonts.googleapis.com/css2?family=Oswald&display=swap');
-/* #meme-display > div > p {
-    position: absolute;
-    display: flex;
-    justify-content: space-evenly;
-} */
 
 body {
     background-color: aliceblue;
