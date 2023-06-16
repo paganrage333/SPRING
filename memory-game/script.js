@@ -89,12 +89,18 @@ const scoreDisplay = document.getElementById("scoreDisplay");
 let score = 0;
 let lowestScore = localStorage.getItem("lowestScore") || Infinity;
 
+let bestScore = document.querySelector("#bestScore");
+
+//update initial display of best score
+bestScore.textContent = "BEST SCORE: " + (lowestScore === Infinity ?0 : lowestScore);
+
 // TODO: Implement this function!
 
 function handleCardClick(event) {
   //Increment score
   score++;
   scoreDisplay.textContent = "Score: " + score;
+  bestScore.textContent = "Best Score: " + lowestScore;
 
   const clickedCard = event.target;
 
@@ -129,7 +135,7 @@ function handleCardClick(event) {
         //All pairs found!
         displayCongratulations();
       }
-
+      
       //Reset the variables
       numCardsClicked = 0;
       firstCard = null;
