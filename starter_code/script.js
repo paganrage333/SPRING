@@ -21,31 +21,29 @@ function searchHandler(e) {
 		showSuggestions(results, input.value);
 	}else{
 		suggestions.innerHTML = "";
-		suggestions.classList.remove("has-suggestions");
 	}
 }
 
 function showSuggestions(results, inputVal) {
 	suggestions.innerHTML = "";
 	let lowerCaseInput = inputVal.toLowerCase();
-	results.forEach((fruit) => {
+	let displayedResults = results.slice(0,5)
+
+	displayedResults.forEach((fruit) => {
 		let lowerFruit = fruit.toLowerCase();
 		let newSug = document.createElement('li');
 		let sugIndex = lowerFruit.indexOf(lowerCaseInput);
-		let matches = fruit.slice(0, sugIndex) + fruit.slice(sugIndex, sugIndex + inputVal.length) + fruit.slice(sugIndex + inputVal.length)
+		let matches = fruit.slice(0, sugIndex) + "<strong>" + fruit.slice(sugIndex, sugIndex + inputVal.length) + "</strong>" + fruit.slice(sugIndex + inputVal.length)
 
 		newSug.innerHTML = matches;
 		suggestions.appendChild(newSug);
 	});
-	if (suggestions.innerHTML != ""){
-		suggestions.classList.add("has-suggestions")
-	}
+
 }
 
 function useSuggestion(e) {
-	input.value = Map.get(e.target.innerText);
+	input.value = e.target.innerText;
 	suggestions.innerHTML = "";
-	suggestions.classList.remove("has-suggestions")
 }
 
 input.addEventListener('keyup', searchHandler);

@@ -1,46 +1,50 @@
 * {
-  /* box-sizing: border-box; */
+  box-sizing: border-box;
 }
 
 :focus {
- /* TODO */
+ border: 1px solid white;
 }
 
 body {
-  /* background: linear-gradient(rgb(233, 205, 25), rgb(233, 113, 28)); */
+  height: 100vh;
+  background: linear-gradient(rgb(233, 205, 25), rgb(233, 113, 28));
 }
 
 input {
- /* TODO */
+  /* padding: 10px; */
+ background-color: rgb(233, 113, 28, .7);
 }
 
 .search-container {
- /* TODO */
+ display: flex;
+ justify-content: center;
+ /* padding: 300px; */
+ padding-top: 300px;
+ position: relative;
 }
-.search-container input,
-.search-container .suggestions {
-  /* TODO */
+
+.suggestions {
+  position: absolute;
+  top: 100%;
+  left: 44%;
+  width: 100%;
+  background-color: rgb(255, 255, 255);
+  border: none;
+  /* display: none; */
 }
-.search-container input {
- /* TODO */
-}
-.search-container .suggestions {
-   /* TODO */
-}
+
 
 ul {
-  /* TODO */
-}
-ul.has-suggestions {
-  /* TODO */
-}
-ul li {
-  /* TODO */
-}
-ul li:hover {
-  /* TODO */
+  width: 12%;
+  position: absolute;
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+  background-color: rgb(233, 113, 28, .6);
 }
 
-input {
-   /* TODO */
+ul li:hover {
+  background-color: rgb(233, 113, 28);
 }
+
