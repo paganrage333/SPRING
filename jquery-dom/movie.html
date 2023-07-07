@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Movies App</h1>
+    <ul id="movie-list"></ul>
+    <script src="https://code.jquery.com/jquery-3.3.1.js"></script>
+    <script>
+        function makeForm() {
+            let input1 = "<input type='text' placeholder='Title' value='' >"
+            let input2 = "<input type='text' placeholder='Rating' value='' >"
+            let btn = "<button id='btn' >Submit</button"
+            $('body').append(input1, input2, btn)
+        }
+        makeForm();
+        $('#btn').on('click', function(){
+            let movieTitle = $(input1).val()
+            console.log(movieTitle)
+            $('.movie-list').append()
+        })
+    </script>
+</body>
+</html>
