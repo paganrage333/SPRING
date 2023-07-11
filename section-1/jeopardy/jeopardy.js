@@ -30,7 +30,7 @@ let categories = [];
  */
 
 async function getCategoryIds() {
-  let response = await axios.get("https://jservice.io/api/categories?count=10");
+  let response = await axios.get("https://jservice.io/api/categories?count=50");
   let catIds = response.data.map(c => c.id)
   return _.sampleSize(catIds, NUM_CATEGORIES)
 }
@@ -153,6 +153,6 @@ $("#start").on("click", setupAndStart);
 /** On page load, add event handler for clicking clues */
 
 $(async function () {
-    setupAndStart();
+   await setupAndStart();
     $("#jeopardy").on("click", "td", handleClick);
 })
