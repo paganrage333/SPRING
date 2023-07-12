@@ -6,7 +6,18 @@
   #74119c
 */
 
+body {
+  background: linear-gradient(#74c8fd, rgb(255, 133, 214))
+}
+
+h1 {
+  text-align: center;
+  font-family: 'Times New Roman', Times, serif;
+  color: rgb(147, 109, 13);
+}
+
 #jeopardy {
+  padding: 20px;
   text-align: center;
   font-size: 12px;
   background-color: #060ce9;
