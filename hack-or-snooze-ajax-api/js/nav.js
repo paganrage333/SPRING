@@ -14,6 +14,8 @@ function navAllStories(evt) {
 
 $body.on("click", "#nav-all", navAllStories);
 
+// Submit a story when clicked
+
 function navSubmitStoryClick(evt){
   console.debug("navSubmitStoryClick", evt);
   hidePageComponents();
